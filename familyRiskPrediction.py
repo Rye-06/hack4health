@@ -1,0 +1,1 @@
+def family_increased_risk(base_risk, first_degree_count, second_degree_count):
