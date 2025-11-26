@@ -1,3 +1,4 @@
+# Function to calculate increased risk of Alzheimer's disease based on family history
 def family_increased_risk(base_risk, first_degree_count, second_degree_count, 
                           first_degree_risk_factor=2.0, second_degree_risk_factor=1.2):
     """
