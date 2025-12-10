@@ -1,6 +1,6 @@
 # Questions that help narrow down the user's risk
 import sys 
-from familyRiskPrediction import increased_risk_from_family_history
+from familyRiskPrediction import family_increased_risk
 
 def _ask_yes_no(prompt):
     while True:
@@ -47,11 +47,17 @@ def run_risk_assessement():
 
     second_degree_count = int(grandparents_count) + int(aunts_uncles_count) + int(cousins_count)
 
-    new_risk, breakdown = increased_risk_from_family_history(
+    new_risk, breakdown = family_increased_risk(
         BASELINE_RISK,
         first_degree_count,
         second_degree_count
     )
+
+    print("\nRisk assessment results:")
+    print(f" First-degree multiplier: {breakdown.get('risk_first', 1.0):.2f}")
+    print(f" Second-degree multiplier: {breakdown.get('risk_second', 1.0):.2f}")
+    print(f" Combined risk multiplier: {breakdown.get('overall_risk', 1.0):.2f}")
+    print(f"\n Estimated Azhiemer's risk: {new_risk*100:.2f}%")
 
 if __name__ == "__main__":
     try: 
