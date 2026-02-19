@@ -1,0 +1,8 @@
+age,sex,family_history,apoe,label
+62,1,1,1,mild_dem
+
+74,0,0,0,moderat_dem
+
+59,1,1,1,non_dem
+
+20,1,1,1,very_mild_dem
